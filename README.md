@@ -1,6 +1,7 @@
 ## next-notify
 
 Simple notification system for React applications styled with tailwind
+- Here's an [example](https://next-notify.vercel.app/)
 
 ### Setup
 
