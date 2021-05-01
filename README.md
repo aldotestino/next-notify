@@ -26,7 +26,7 @@ Simple notification system for React applications styled with tailwind
 
   notify({
     title: 'Welcome! 🚀'
-    description: 'Your account has been succesfully created,',
+    description: 'Your account has been succesfully created.',
     type: 'success',
     duration: 5000
   });
@@ -36,5 +36,5 @@ Simple notification system for React applications styled with tailwind
 |---|---|:-:|:-:|
 |title|The title of the notification|required|-|
 |description|The description of the notification|required|-|
-|type|There are four types of notification: 'success', 'error', 'warning' and 'info'|not required|'sucess'|
+|type|There are four types of notification: 'success', 'error', 'warning' and 'info'|not required|'success'|
 |duration|The duration of the notification|not required|3000|
