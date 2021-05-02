@@ -25,7 +25,7 @@ Simple notification system for React applications styled with tailwind
   const { notify } = useNotify();
 
   notify({
-    title: 'Welcome! 🚀'
+    title: 'Welcome! 🚀',
     description: 'Your account has been succesfully created.',
     type: 'success',
     duration: 5000
