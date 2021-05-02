@@ -55,7 +55,7 @@ function Home() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
-      <h1 className="mb-10 text-4xl text-gray-900 font-mono">next-notify</h1>
+      <h1 className="mb-10 text-4xl font-mono">next-notify</h1>
       <div className="flex flex-col items-center space-y-4 md:flex-row md:space-y-0 md:space-x-4">
         {triggers.map(t => <Button key={t.state} action={t.action} state={t.state}>{t.label}</Button>)}
       </div>

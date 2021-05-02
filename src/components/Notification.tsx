@@ -59,7 +59,7 @@ function NotificationProvider({ children }: NotificationProviderProps) {
 
   return (
     <NotificationContext.Provider value={{ notify }}>
-      <div className="fixed px-5 w-full top-5 sm:w-auto sm:right-5 sm:px-0">
+      <div className="fixed px-5 w-full top-5 sm:w-auto sm:right-5 sm:px-0 z-50">
         <AnimatePresence>
           {notifications.map(n => <Notification key={n.id} {...n} />)}
         </AnimatePresence>
@@ -91,7 +91,7 @@ function Notification({ onClose, title, description, type = 'success' }: Notific
       }} 
       // auto animates the element when it's position changes
       layout
-      className="bg-gray-50 w-full sm:max-w-xs mb-4 text-gray-900 shadow-md flex py-2 px-4 rounded-lg space-x-4">
+      className="bg-gray-100 dark:bg-gray-800 w-full sm:max-w-xs mb-4 text-gray-900 dark:text-gray-50 shadow-md flex py-2 px-4 rounded-lg space-x-4">
       <div>
         {icons[type]}
       </div>
@@ -100,8 +100,8 @@ function Notification({ onClose, title, description, type = 'success' }: Notific
         <p className="text-md">{description}</p>
       </div>
       <div>
-        <button onClick={onClose} className="hover:bg-gray-200 p-1 rounded-md focus:outline-none focus:ring-offset-1 focus:ring-offset-transparent focus:ring-1 focus:ring-indigo-400">
-          <XIcon className="w-6 h-6 text-gray-900" />
+        <button onClick={onClose} className="hover:bg-gray-200 dark:hover:bg-gray-700 p-1 rounded-md focus:outline-none focus:ring-offset-1 focus:ring-offset-transparent focus:ring-1 focus:ring-indigo-400">
+          <XIcon className="w-6 h-6 text-gray-900 dark:text-gray-50" />
         </button>
       </div>
     </motion.div>
