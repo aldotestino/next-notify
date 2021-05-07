@@ -104,7 +104,7 @@ function Notification({ render: Render, id, ...props }: NotificationI) {
         :
         <div className="bg-gray-100 dark:bg-gray-800 w-full sm:w-80 mb-4 text-gray-900 dark:text-gray-50 shadow-md flex py-2 px-4 rounded-lg space-x-4">
           <div>
-            {icons[props.type]}
+            {icons[props.type || 'success']}
           </div>
           <div className="flex-grow">
             <h3 className="text-lg font-medium">{props.title}</h3>
