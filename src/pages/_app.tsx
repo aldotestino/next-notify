@@ -1,4 +1,4 @@
-import { AppProps } from 'next/dist/next-server/lib/router/router';
+import { AppProps } from 'next/app';
 import NotificationProvider from '../components/Notification';
 import '../styles/globals.css';
 
