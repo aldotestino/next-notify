@@ -1,20 +1,8 @@
 import Button from '../components/Button';
-import { useNotify, NotificationRenderFunction } from '../components/Notification';
-import { XIcon } from '@heroicons/react/outline';
-
-const MyNotification: NotificationRenderFunction = ({ title, description, onClose, duration, type }) => {
-  return (
-    <div className="mb-4 p-4 bg-indigo-300 text-gray-900 flex space-x-2 items-start">
-      <div className="flex-grow">
-        <h1 className="text-lg font-semibold italic">{title}</h1>
-        <p>{description}</p>
-      </div>
-      <button onClick={onClose}>
-        <XIcon className="w-6 h-6" />
-      </button>
-    </div>
-  );
-};
+import { useNotify } from '../components/Notification';
+import { notificationCode, _appCode, registerCode, register2Code, myNotificationCode } from '../codes';
+import { MyNotification } from '../components/MyNotification';
+import Code from '../components/Code';
 
 interface Trigger {
   label: string
@@ -79,12 +67,47 @@ function Home() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
-      <h1 className="mb-10 text-4xl font-mono">next-notify</h1>
-      <div className="flex flex-col items-center space-y-4 lg:flex-row lg:space-y-0 lg:space-x-4">
-        {triggers.map((t, i) => <Button key={i} action={t.action} state={t.state}>{t.label}</Button>)}
+    <>
+      <div className="min-h-screen flex flex-col items-center justify-center">
+        <h1 className="mb-10 text-4xl font-mono">next-notify</h1>
+        <div className="flex flex-col items-center space-y-4 lg:flex-row lg:space-y-0 lg:space-x-4">
+          {triggers.map((t, i) => <Button key={i} action={t.action} state={t.state}>{t.label}</Button>)}
+        </div>
       </div>
-    </div>
+      <div className='flex flex-col items-center mb-10'>
+        <h1 className='text-4xl mt-10 mb-4'>Requirements</h1>
+        <ol className='list-decimal'>
+          <li>
+            <a href="https://tailwindcss.com/" className='hover:underline text-xl mb-4'>Tailwind css</a>
+          </li>
+          <li>
+            <a href="https://heroicons.com/" className='hover:underline text-xl'>Heroicons</a>
+          </li>
+        </ol>
+        <h1 className='text-4xl mt-10'>How to use</h1>
+        <ol className='list-decimal'>
+          <li>
+            <p className='text-xl my-4'>Create <code>Notification.tsx</code> file</p>
+            <Code>{notificationCode}</Code>
+          </li>
+          <li>
+            <p className='text-xl my-4'>Wrap your entire app with <code>NotificationProvider</code></p>
+            <Code>{_appCode}</Code>
+          </li>
+          <li>
+            <p className='text-xl my-4'>In every component you want is possible to spawn a notification</p>
+            <Code>{registerCode}</Code>
+          </li>
+          <li>
+            <p className='text-xl my-4'>Define a custom notification</p>
+            <Code>{myNotificationCode}</Code>
+            <div className='h-4'></div>
+            <Code>{register2Code}</Code>
+          </li>
+        </ol>
+      </div>
+    </>
+    
   );
 }
 
